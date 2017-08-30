@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.vaadin.server.PaintException;
 import com.vaadin.server.PaintTarget;
+import com.vaadin.ui.Component;
 import com.vaadin.ui.HasComponents;
 import com.vaadin.v7.data.Container;
 import com.vaadin.v7.data.util.IndexedContainer;
@@ -17,7 +18,7 @@ import com.vaadin.v7.ui.OptionGroup;
  * The goal of {@link FlexibleOptionGroup} is to provide a very flexible way to
  * layout OptionGroup radio buttons or check boxes. The
  * {@link FlexibleOptionGroup} component itself cannot be added to to any layout
- * ({@link ComponentContainer} ). Well, you can, but it will throw an
+ * ({@link Component} ). Well, you can, but it will throw an
  * UnsupportedOperationException. Instead, add
  * {@link FlexibleOptionGroupItemComponent}s to your layout. Each
  * {@link FlexibleOptionGroupItemComponent} represents a radio button or a check
@@ -49,12 +50,6 @@ public class FlexibleOptionGroup extends OptionGroup {
         setContainerDataSource(new IndexedContainer());
     }
 
-    /**
-     * Creates a {@link FlexibleOptionGroup} and binds it to the given
-     * Container.
-     *
-     * @param dataSource
-     */
     public FlexibleOptionGroup(Container dataSource) {
         id = nextId++;
         setContainerDataSource(dataSource);
